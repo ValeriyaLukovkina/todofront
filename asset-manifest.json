@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/todofront/static/css/main.78e22015.css",
-    "main.js": "/todofront/static/js/main.ee90c070.js",
+    "main.css": "/todofront/static/css/main.12e71461.css",
+    "main.js": "/todofront/static/js/main.f59ef207.js",
     "static/js/787.c1112931.chunk.js": "/todofront/static/js/787.c1112931.chunk.js",
     "static/media/Inter-Bold.ttf": "/todofront/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
     "static/media/Inter-SemiBold.ttf": "/todofront/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
@@ -15,12 +15,12 @@
     "static/media/Avatar.svg": "/todofront/static/media/Avatar.6871a2859c6add2548c0c0a1e908b6e9.svg",
     "static/media/Week.svg": "/todofront/static/media/Week.5a5dee08a87a3048093eb0daa5c0f3af.svg",
     "static/media/Today.svg": "/todofront/static/media/Today.f4c04149cd238f920a8a21b572c21f81.svg",
-    "main.78e22015.css.map": "/todofront/static/css/main.78e22015.css.map",
-    "main.ee90c070.js.map": "/todofront/static/js/main.ee90c070.js.map",
+    "main.12e71461.css.map": "/todofront/static/css/main.12e71461.css.map",
+    "main.f59ef207.js.map": "/todofront/static/js/main.f59ef207.js.map",
     "787.c1112931.chunk.js.map": "/todofront/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78e22015.css",
-    "static/js/main.ee90c070.js"
+    "static/css/main.12e71461.css",
+    "static/js/main.f59ef207.js"
   ]
 }
