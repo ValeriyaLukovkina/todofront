@@ -1,5 +1,4 @@
 import { authAPI } from "../api/api";
-import { useAuth } from "../hooks/auth.hook";
 import { initializedSuccess } from "./app-reducer";
 import { setCategories } from "./category-reducer";
 import { getAllTasks } from "./todo-reducer";

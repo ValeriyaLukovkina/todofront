@@ -31,11 +31,11 @@ const Navbar = ({ categories, logout, deleteCategory, userId, firstName }) => {
     const categoryItem = categories.map(el => {
 
         return <div key={el._id} className={style.categoryItem}>
-            <NavItem logo={null} link={`/category/${el.title}`} title={el.title} />
+            <NavItem logo={null} link={`/todofront/category/${el.title}`} title={el.title} />
             <button
                 className={style.categoryItem_btn}
                 onClick={() => {
-                    setConfirmDeleteId({id: el._id, name: el.title})
+                    setConfirmDeleteId({ id: el._id, name: el.title })
                     setOpenConfirmDelete(true)
                 }}>
                 <img src={logoDelete} alt='delete' />
@@ -55,11 +55,11 @@ const Navbar = ({ categories, logout, deleteCategory, userId, firstName }) => {
                         <img className={style.nav_img + ' ' + style.today_img} src={logoToday} alt='icon' />
                         <span className={style.today_num}>{moment().format('D')}</span>
                     </div>
-                    <NavLink to="/day" className={({ isActive }) => isActive ? style.item_a_active : style.item_a_inactive}>ToDo</NavLink>
+                    <NavLink to="/todofront/day" className={({ isActive }) => isActive ? style.item_a_active : style.item_a_inactive}>ToDo</NavLink>
                 </div>
-                <NavItem logo={logoWeek} link={'/week'} title={'Week'} onClick={() => console.log('click')} />
-                <NavItem logo={logoTasks} link={'/tasks'} title={'All tasks'} onClick={() => console.log('click')} />
-                <NavItem logo={logoTasks} link={'/calendar'} title={'Calendar'} onClick={() => console.log('click')} />
+                <NavItem logo={logoWeek} link={'/todofront/week'} title={'Week'} onClick={() => console.log('click')} />
+                <NavItem logo={logoTasks} link={'/todofront/tasks'} title={'All tasks'} onClick={() => console.log('click')} />
+                <NavItem logo={logoTasks} link={'/todofront/calendar'} title={'Calendar'} onClick={() => console.log('click')} />
                 <div className={style.categories_title}>
                     <p
                         onClick={() => {
@@ -80,7 +80,13 @@ const Navbar = ({ categories, logout, deleteCategory, userId, firstName }) => {
             <div className={style.categories} style={{ maxHeight: height + 'px' }}>
                 {showCategory && categoryItem}
             </div>
-            <button className={style.logout} onClick={logout}>log out</button>
+            <button className={style.logout} onClick={logout}>
+                <NavLink
+                    className={style.logout_link}
+                    to="/todofront/signin">
+                    log out
+                </NavLink>
+            </button>
         </nav>
     )
 }

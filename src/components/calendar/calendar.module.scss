@@ -30,6 +30,11 @@
                 border: none;
                 font-size: 20px;
                 font-weight: 300;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 50%;
+                }
             }
         }
 
@@ -51,6 +56,11 @@
             justify-content: space-around;
             align-items: center;
             border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 50%;
+            }
 
             &_text {
                 margin: 10px;
@@ -110,6 +120,11 @@
                     border: none;
                     background-color: transparent;
                     margin: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 50%;
+                    }
                 }
 
                 &:hover {
@@ -177,6 +192,14 @@
             &_btn {
                 border: none;
                 background-color: transparent;
+
+                &_show {
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 50%;
+                    }
+                }
             }
         }
 

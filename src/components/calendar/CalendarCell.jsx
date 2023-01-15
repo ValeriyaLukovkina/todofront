@@ -35,7 +35,7 @@ const CalendarCell = ({ tasks, dateCell }) => {
                     }
                     {filterTask && filterTask.length > 2 &&
                         <li className={style.calendar_cell_tasks_one + ' ' + style.calendar_cell_tasks_show}>
-                            <button className={style.calendar_cell_tasks_btn} onClick={() => setShowMore(true)}>Show else {filterTask.length - 2}</button>
+                            <button className={style.calendar_cell_tasks_btn + ' ' + style.calendar_cell_tasks_btn_show} onClick={() => setShowMore(true)}>Show else {filterTask.length - 2}</button>
                         </li>}
                 </ul>
                 {showMore && <ModalShowTasks key={dateCell} coordCell={coordCell} setShowMore={setShowMore} dateCell={dateCell} filterTask={filterTask} />}

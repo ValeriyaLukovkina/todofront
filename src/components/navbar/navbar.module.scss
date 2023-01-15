@@ -58,9 +58,9 @@
         text-overflow: ellipsis;
         cursor: pointer;
 
-        // &:hover {
-        //     opacity: 50%;
-        // }
+        &:hover {
+            opacity: 50%;
+        }
     }
 
     // &_a {
@@ -79,8 +79,6 @@
 
 .today {
     position: relative;
-
-    &_img {}
 
     &_num {
         position: absolute;
@@ -166,13 +164,19 @@
     text-transform: uppercase;
     color: $color_text;
     border: 1px solid $color_text;
-    margin: 0 0 20px 20px;
+    margin: 0 0 12px 20px;
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
     position: fixed;
-    bottom: 10px;
+    bottom: 0;
     left: 10px;
+    width: 200px;
+
+    &_link {
+        text-decoration: none;
+        color: $white;
+    }
 
     &:hover {
         opacity: 50%;

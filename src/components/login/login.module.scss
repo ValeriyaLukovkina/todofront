@@ -2,14 +2,19 @@
 @import '../../commonScss/fonts.scss';
 
 .login {
-    width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .sign {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &_title {
+        cursor: default;
+    }
 
     &_link {
         display: flex;
@@ -19,6 +24,7 @@
         &_text {
             margin: 0;
             font-size: 14px;
+            cursor: default;
         }
 
         &_nav {
@@ -26,6 +32,11 @@
             font-size: 14px;
             text-decoration: none;
             color: $color_blue_btn;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 50%;
+            }
         }
     }
 
@@ -35,6 +46,7 @@
         &_block {
             position: relative;
             margin: 10px;
+            cursor: text;
 
             &_input {
                 height: 54px;
@@ -80,9 +92,18 @@
                 color: #282828;
                 font-size: 20px;
                 background-color: $color_blue_btn;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 50%;
+                }
             }
         }
     }
 
 
+}
+
+.input_error {
+    border: 1px solid red;
 }

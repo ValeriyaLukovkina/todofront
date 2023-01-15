@@ -51,3 +51,7 @@ h3 {
 button {
   font-family: $font-inter;
 }
+
+.input_error {
+    border: 1px solid red;
+}

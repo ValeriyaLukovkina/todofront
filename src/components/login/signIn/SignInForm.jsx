@@ -12,7 +12,7 @@ const SignInForm = ({ login }) => {
           <p className={style.sign_link_text}>Don't have an account?</p>
           <NavLink
             className={style.sign_link_nav}
-            to="/signup">
+            to="/todofront/signup">
             Sign up
           </NavLink>
         </div>
@@ -20,8 +20,10 @@ const SignInForm = ({ login }) => {
           initialValues={{ email: '', password: '' }}
           validate={values => {
             const errors = {};
-            if (!values.email || !values.password) {
+            if (!values.email) {
               errors.email = 'Required';
+            } else if (!values.password) {
+              errors.password = 'Required';
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
@@ -52,11 +54,10 @@ const SignInForm = ({ login }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.email}
-                  className={style.sign_form_block_input}
+                  className={style.sign_form_block_input + ' ' + (touched.email && errors.email && style.input_error)}
                 />
                 <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.email && style.sign_form_block_span_active)}>Email</span>
               </div>
-              {errors.email && touched.email && errors.email}
               <div className={style.sign_form_block}>
                 <input
                   type="password"
@@ -64,7 +65,7 @@ const SignInForm = ({ login }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className={style.sign_form_block_input}
+                  className={style.sign_form_block_input + ' ' + (touched.password && errors.password && style.input_error)}
                 />
                 <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.password && style.sign_form_block_span_active)}>password</span>
 

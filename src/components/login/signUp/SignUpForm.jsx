@@ -12,7 +12,7 @@ const SignUpForm = ({ registration }) => (
         <p className={style.sign_link_text}>Already have an account?</p>
         <NavLink
           className={style.sign_link_nav}
-          to='/signin'>
+          to='/todofront/signin'>
           Sign in
         </NavLink>
       </div>
@@ -20,12 +20,20 @@ const SignUpForm = ({ registration }) => (
         initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
         validate={values => {
           const errors = {};
-          if (!values.firstName || !values.lastName || !values.email || !values.password) {
+          if (!values.firstName) {
+            errors.firstName = 'Required';
+          } else if (!values.lastName) {
+            errors.lastName = 'Required';
+          } else if (!values.email) {
             errors.email = 'Required';
+          } else if (!values.password) {
+            errors.password = 'Required';
           } else if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'Invalid email address';
+          } else if (values.password.length < 6) {
+            errors.password = 'Invalid password';
           }
           return errors;
         }}
@@ -78,7 +86,6 @@ const SignUpForm = ({ registration }) => (
               />
               <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.email && style.sign_form_block_span_active)}>Email</span>
             </div>
-            {errors.email && touched.email && errors.email}
             <div className={style.sign_form_block}>
               <input
                 type="password"
@@ -90,7 +97,6 @@ const SignUpForm = ({ registration }) => (
               />
               <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.password && style.sign_form_block_span_active)}>Password</span>
             </div>
-            {/* {errors.password && touched.password && errors.password} */}
             <div className={style.sign_form_block}>
               <button className={style.sign_form_block_btn} type="submit" disabled={isSubmitting}>
                 Create account
