@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { registration } from "../../../redux/auth-reducer";
 import SignUpForm from "./SignUpForm";

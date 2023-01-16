@@ -1,5 +1,5 @@
-import React from "react";
 import { connect } from "react-redux";
+import { deleteCategorySuccess } from "../../../redux/category-reducer";
 import { changeAllTaskCategory, deleteTaskCurrentCategory } from "../../../redux/todo-reducer";
 import ModalDeleteCategory from "./ModalDeleteCategory";
 
@@ -12,6 +12,6 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-const ModalDeleteCategoryContainer = connect(mapStateToProps, { deleteTaskCurrentCategory, changeAllTaskCategory })(ModalDeleteCategory)
+const ModalDeleteCategoryContainer = connect(mapStateToProps, { deleteTaskCurrentCategory, changeAllTaskCategory, deleteCategorySuccess })(ModalDeleteCategory)
 
 export default ModalDeleteCategoryContainer;

@@ -11,7 +11,7 @@ const ToDoCategory = (props) => {
     return (<div className={style.wrp}>
         <TaskBlock titleBlock={name} titleCategory={name} tasks={props.tasks} meanSort={'List'} props={props} />
         <div className={style.footer}>
-            <FormAddContainer />
+            <FormAddContainer block={'category'} initValues={name} />
         </div>
 
     </div>)

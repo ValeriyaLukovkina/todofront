@@ -13,7 +13,6 @@ const CalendarWeek = ({ tasks, day }) => {
         <div className={'content ' + style.week}>
             {calendar.map(el => {
                 return (
-
                     <div key={el} className={style.week_weekday}>
                         <p className={`${style.calendar_cell_p} ${moment().isSame(el, 'day') ? style.calendar_cell_current : ''}`}>
                             {el.format('ddd')}

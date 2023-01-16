@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import FormAddContainer from "../../form/formAddTask/FormAddContainer";
 import TaskBlock from "../TaskBlock";
@@ -9,7 +10,7 @@ const ToDoWeek = (props) => {
         <TaskBlock titleBlock={'Next week'} titleCategory={'Week'} tasks={props.tasks} meanSort={'Time'} props={props} />
         <div className={style.footer}>
 
-            <FormAddContainer />
+            <FormAddContainer block={'week'} initValues={moment()}/>
 
         </div>
 

@@ -4,7 +4,7 @@ import style from "../login.module.scss"
 import SignUpFormContainer from "./SignUpFormContainer";
 
 
-const SignUp = ({ }) => {
+const SignUp = (props) => {
     return ReactDOM.createPortal(
         <div className={style.login}>
             <SignUpFormContainer />

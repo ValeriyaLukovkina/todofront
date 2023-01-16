@@ -4,8 +4,7 @@ import * as ReactDOM from 'react-dom';
 import styleModal from "./../modal.module.scss";
 import style from "./modalDeleteCategory.module.scss"
 
-const ModalDeleteCategory = ({ onClose, userId, nameCategory, categoryId, deleteTaskCurrentCategory, changeAllTaskCategory }) => {
-debugger
+const ModalDeleteCategory = ({ onClose, userId, nameCategory, categoryId, deleteTaskCurrentCategory, changeAllTaskCategory, deleteCategorySuccess }) => {
     const [isCheck, setIsCheck] = useState(true);
 
     const onClickDelete = (userId, nameCategory, categoryId) => {

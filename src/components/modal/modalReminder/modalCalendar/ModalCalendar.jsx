@@ -28,11 +28,13 @@ const ModalCalendar = ({ date, taskId, setTaskDate, setTaskTime, time, setTempor
             <div className={style.calendar_choose}>
                 <div className={style.calendar_choose_block + ' ' + style.calendar_choose_date}>
                     <h4 className={style.calendar_choose_block_title}>date</h4>
-                    <ChoiceDate taskId={taskId} setTaskDate={setTaskDate} date={date} setTemporaryDate={setTemporaryDate}/>
+                    <ChoiceDate taskId={taskId} setTaskDate={setTaskDate} date={date}
+                        setTemporaryDate={setTemporaryDate} />
                 </div>
                 <div className={style.calendar_choose_block + ' ' + style.calendar_choose_time}>
                     <h4 className={style.calendar_choose_block_title}>time</h4>
-                    <ChoiceTime taskId={taskId} setTaskTime={setTaskTime} time={time} setTemporaryTime={setTemporaryTime} date={date} listTime={listTime}/>
+                    <ChoiceTime taskId={taskId} setTaskTime={setTaskTime} time={time}
+                        setTemporaryTime={setTemporaryTime} date={date} listTime={listTime} />
                 </div>
             </div>
             <div className={style.calendar_header}>
@@ -60,12 +62,13 @@ const ModalCalendar = ({ date, taskId, setTaskDate, setTaskTime, time, setTempor
                             : <button
                                 onClick={() => {
                                     if (taskId) {
-                                    setTaskDate(taskId, moment(el))                                        
+                                        setTaskDate(taskId, moment(el))
                                     } else {
                                         setTemporaryDate(el)
                                     }
                                 }}
-                                className={`${date && moment(date).isSame(el, 'day') ? style.calendar_table_cell_current : ''} ${style.calendar_table_cell_btn}`}>
+                                className={`${date && moment(date).isSame(el, 'day') ? style.calendar_table_cell_current : ''} 
+                                ${style.calendar_table_cell_btn}`}>
                                 {el.format('D')}
                             </button>
                         }

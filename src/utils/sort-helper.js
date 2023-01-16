@@ -10,6 +10,7 @@ export let sortByList = (items, propName, objPropName, Component, props) => {
                 deleteTask={props.deleteTask} deleteSubtask={props.deleteSubtask} taskId={task._id}
                 nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
         }
+        return null
     })
 }
 
@@ -29,6 +30,7 @@ export let sortByDate = (items, propName, objPropName, Component, props, extra) 
                         nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
                 }
             }
+            return null
         })
     } else if (propName === 'Tomorrow') {
         return items.map((task) => {
@@ -42,6 +44,7 @@ export let sortByDate = (items, propName, objPropName, Component, props, extra) 
                         nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
                 }
             }
+            return null
         })
     } else if (propName === 'Week') {
         return items.map((task) => {
@@ -55,6 +58,7 @@ export let sortByDate = (items, propName, objPropName, Component, props, extra) 
                         nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
                 }
             }
+            return null
         })
     } else if (propName === 'Upcoming') {
         return items.map((task) => {
@@ -68,6 +72,7 @@ export let sortByDate = (items, propName, objPropName, Component, props, extra) 
                         nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
                 }
             }
+            return null
         })
     } else if (!propName) {
         return items.map((task) => {
@@ -79,9 +84,9 @@ export let sortByDate = (items, propName, objPropName, Component, props, extra) 
                     deleteTask={props.deleteTask} deleteSubtask={props.deleteSubtask} taskId={task._id}
                     nameTask={task.nameTask} complete={task.complete} titleCategory={propName} />
             }
+            return null
         })
     }
-
 }
 
 export let filterGroup = (group) => {
@@ -116,6 +121,7 @@ export let filterGroup = (group) => {
                 return 1;
             }
         }
+        return null
     })
 
 }
@@ -127,6 +133,7 @@ export let sortByDateCalendar = (items, date) => {
                 return task
             }
         }
+        return null
     })
     return itemGroup.filter(task => task)
 }

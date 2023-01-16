@@ -52,7 +52,6 @@ const toDoReducer = (state = initialState, action) => {
                 tasks: updateObjectInArray(state.tasks, action.taskId, '_id', { category: action.category })
             }
             case CHANGE_ALL_TASK_CATEGORY_SUCCESS:
-                debugger
                 return {
                     ...state,
                     tasks: updateObjectInArray(state.tasks, action.previousCategory, 'category', { category: action.category })
@@ -177,10 +176,8 @@ export const changeTaskCategory = (taskId, category) => async (dispatch) => {
 }
 
 export const changeAllTaskCategory = (userId, previousCategory, categoryId) => async (dispatch) => {
-    debugger
     let response = await tasksAPI.changeAllTaskCategory(userId, previousCategory, null);
     if (response.resultCode === 0) {
-        debugger
         dispatch(changeAllTaskCategorySuccess(previousCategory, null))
         dispatch(deleteCategory(userId, categoryId))
     }
@@ -208,9 +205,7 @@ export const deleteTask = (taskId) => async (dispatch) => {
 }
 
 export const deleteTaskCurrentCategory = (userId, category, categoryId) => async (dispatch) => {
-    debugger
     let response = await tasksAPI.deleteTaskCurrentCategory(userId, category)
-    debugger
     if (response.resultCode === 0) {
         dispatch(deleteTaskCurrentCategorySuccess(category))
         dispatch(deleteCategory(userId, categoryId))

@@ -6,13 +6,19 @@ import moment from "moment";
 import ModalReminderContainer from "../../modal/modalReminder/ModalReminderContainer";
 import ModalListContainer from "../../modal/modalList/ModalListContainer";
 
-const FormAddTaks = ({ addTask, userId }) => {
+const FormAddTaks = ({ addTask, userId, initValues, block }) => {
     const [openInfo, setOpenInfo] = useState(false)
     const [openReminder, setOpenReminder] = useState(false);
     const [openCategory, setOpenCategory] = useState(false);
     const [temporaryDate, setTemporaryDate] = useState(null);
     const [temporaryTime, setTemporaryTime] = useState(null);
-    const [temporaryTaskCategory, setTemporaryTaskCategory] = useState(null)
+    const [temporaryTaskCategory, setTemporaryTaskCategory] = useState(null);
+
+    useState(() => {
+        if (block === 'day' || block === 'week') {
+            setTemporaryDate(initValues)
+        }
+    }, [block, initValues])
 
     const handleFocus = () => {
         setOpenInfo(true)
@@ -24,18 +30,18 @@ const FormAddTaks = ({ addTask, userId }) => {
                 <div className={style.setting_wrp + ' ' + (openInfo && style.setting_wrp_visible)}>
                     <div className={style.setting_block}>
                         <button
-                        onClick={() => {
-                            setOpenReminder(true)
-                            setOpenInfo(false)
-                        }}
+                            onClick={() => {
+                                setOpenReminder(true)
+                                setOpenInfo(false)
+                            }}
                             className={style.setting_block_btn}>
-                                {temporaryDate && moment(temporaryDate).format('DD.MM.YYYY') + ' '}  
-                                {/* {temporaryTime && moment(temporaryTime.format('LT')) */}
-                                {temporaryTime && moment(temporaryTime).format('HH:mm')}
-                                {!temporaryDate && !temporaryTime && 'Remind'}
-                                {/* {temporaryDate || temporaryTime ? moment(temporaryDate).format('DD.MM.YYYY') + ' ' + moment(temporaryTime, 'LT') : 'Remind'} */}
-                            </button>
-                        <ModalReminderContainer isOpen={openReminder} taskId={null} date={temporaryDate} time={temporaryTime} setTemporaryDate={setTemporaryDate} setTemporaryTime={setTemporaryTime} onClose={() => setOpenReminder(false)} />
+                            {temporaryDate && moment(temporaryDate).format('DD.MM.YYYY') + ' '}
+                            {temporaryTime && moment(temporaryTime).format('HH:mm')}
+                            {!temporaryDate && !temporaryTime && 'Remind'}
+                        </button>
+                        <ModalReminderContainer isOpen={openReminder} taskId={null} date={temporaryDate}
+                            time={temporaryTime} setTemporaryDate={setTemporaryDate} setTemporaryTime={setTemporaryTime}
+                            onClose={() => setOpenReminder(false)} />
 
                     </div>
                     <div className={style.setting_block}>
@@ -45,9 +51,10 @@ const FormAddTaks = ({ addTask, userId }) => {
                                 setOpenInfo(false)
                             }}
                             className={style.setting_block_btn}>
-                                {temporaryTaskCategory ? temporaryTaskCategory : 'Choose category'}
-                            </button>
-                        <ModalListContainer isOpen={openCategory} taskId={null} taskCategory={temporaryTaskCategory} setTemporaryTaskCategory={setTemporaryTaskCategory} onClose={() => setOpenCategory(false)} />
+                            {temporaryTaskCategory ? temporaryTaskCategory : 'Choose category'}
+                        </button>
+                        <ModalListContainer isOpen={openCategory} taskId={null} taskCategory={temporaryTaskCategory}
+                            setTemporaryTaskCategory={setTemporaryTaskCategory} onClose={() => setOpenCategory(false)} />
 
                     </div>
                 </div>
@@ -61,7 +68,7 @@ const FormAddTaks = ({ addTask, userId }) => {
                     }
                     return errors;
                 }}
-                onSubmit={(values, {resetForm}) => {
+                onSubmit={(values, { resetForm }) => {
                     setOpenInfo(false)
                     addTask(userId, values.task, temporaryDate, temporaryTime, temporaryTaskCategory)
                     resetForm()

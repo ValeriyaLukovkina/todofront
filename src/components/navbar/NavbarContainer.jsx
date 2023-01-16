@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { logout } from "../../redux/auth-reducer";
 import { deleteCategory } from "../../redux/category-reducer";

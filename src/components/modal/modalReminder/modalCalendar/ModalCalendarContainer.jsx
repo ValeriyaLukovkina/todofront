@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { nextMonth, previousMonth } from "../../../../redux/calendar-reducer";
 import { setTaskDate, setTaskTime } from "../../../../redux/todo-reducer";

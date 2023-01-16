@@ -11,7 +11,7 @@ import CalendarContainer from './components/calendar/CalendarContainer';
 import ToDoCategoryContainer from './components/toDo/toDoCategory/ToDoCategoryContainer';
 
 const App = ({ isAuth, setAuthUserData, initializedSuccess, getAllTasks, setCategories, }) => {
-debugger
+  debugger
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('userData'))
     const dataCategories = JSON.parse(localStorage.getItem('userCategories'));
@@ -30,14 +30,14 @@ debugger
           {isAuth && <NavbarContainer />}
           <div className={isAuth ? 'app_wrapper_content' : ''}>
             <Routes>
-              <Route path='/todofront/' element={!isAuth && <SignIn />} />
-              <Route path='/todofront/signin' element={isAuth ? <Navigate replace to={'/todofront/'} /> : <SignIn />} />
-              <Route path='/todofront/signup' element={isAuth ? <Navigate replace to={'/todofront/'} /> : <SignUp />} />
-              <Route path='/todofront/tasks' element={<ToDoContainer />} />
-              <Route path='/todofront/week' element={<ToDoWeekContainer />} />
-              <Route path='/todofront/day' element={<ToDoDayContainer />} />
-              <Route path='/todofront/category/:name' element={<ToDoCategoryContainer />} />
-              <Route path='/todofront/calendar' element={<CalendarContainer />} />
+              <Route path='/' element={!isAuth && <SignIn />} />
+              <Route path='/signin' element={isAuth ? <Navigate replace to={'/'} /> : <SignIn />} />
+              <Route path='/signup' element={isAuth ? <Navigate replace to={'/'} /> : <SignUp />} />
+              <Route path='/tasks' element={<ToDoContainer />} />
+              <Route path='/week' element={<ToDoWeekContainer />} />
+              <Route path='/day' element={<ToDoDayContainer />} />
+              <Route path='/category/:name' element={<ToDoCategoryContainer />} />
+              <Route path='/calendar' element={<CalendarContainer />} />
             </Routes>
           </div>
         </BrowserRouter>

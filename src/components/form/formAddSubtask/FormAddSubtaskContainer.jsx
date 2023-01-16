@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { addSubtask, changeSubtaskPrevious, changeSubtaskName, deleteSubtaskPrevious } from "../../../redux/todo-reducer";
 import FormAddSubtask from "./FormAddSubtask";

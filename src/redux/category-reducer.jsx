@@ -51,9 +51,11 @@ export const addCategory = (userId, categoryName) => async (dispatch) => {
 }
 
 export const deleteCategory = (userId, categoryId) => async (dispatch) => {
+    debugger
     let promise = await categoryAPI.deleteCategory(userId, categoryId);
 
     if (promise.resultCode === 0) {
+        debugger
         dispatch(deleteCategorySuccess(categoryId))
         const dataCategories = JSON.parse(localStorage.getItem('userCategories')).categories.filter(el => el._id !== categoryId)
         localStorage.setItem('userCategories', JSON.stringify({

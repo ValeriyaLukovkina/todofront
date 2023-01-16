@@ -1,6 +1,3 @@
-import { authMe } from "./auth-reducer";
-import { getAllTasks } from "./todo-reducer";
-
 const initialState = {
     initialized: false
 }

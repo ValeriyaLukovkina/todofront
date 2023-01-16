@@ -6,6 +6,7 @@ import style from "../calendar.module.scss";
 
 const CalendarDay = ({ tasks, day, listTime }) => {
     const [taskGroupDate, setTaskGroupDate] = useState(null);
+
     useEffect(() => {
         setTaskGroupDate(sortByDateCalendar(tasks, day));
     }, [tasks, day])
@@ -35,6 +36,7 @@ const CalendarDay = ({ tasks, day, listTime }) => {
                                     {task.nameTask}
                                 </div>)
                             }
+                            return null
                         })}
                     </div>
                 </div>
@@ -43,8 +45,12 @@ const CalendarDay = ({ tasks, day, listTime }) => {
                 <div>
                     {listTime.map(time => {
                         return (
-                            <div key={time} className={style.day_main_time_extra + ' ' + (time.slice(-2) === '00' && style.day_main_time)}>
-                                <span className={style.day_main_time_span + ' ' + style.day_time}>{(time === '00:00' || time.slice(-2) !== '00') ? ' ' : time}</span>
+                            <div
+                                key={time}
+                                className={style.day_main_time_extra + ' ' + (time.slice(-2) === '00' && style.day_main_time)}>
+                                <span className={style.day_main_time_span + ' ' + style.day_time}>
+                                    {(time === '00:00' || time.slice(-2) !== '00') ? ' ' : time}
+                                </span>
                                 <div className={style.day_main_tasks}>
                                     {taskGroupDate && taskGroupDate.map(task => {
                                         if (moment(task.time).format('HH:mm') === time) {
@@ -52,6 +58,7 @@ const CalendarDay = ({ tasks, day, listTime }) => {
                                                 <span>{task.nameTask}</span>
                                             </div>)
                                         }
+                                        return null
                                     })}
                                 </div>
                             </div>
@@ -62,7 +69,5 @@ const CalendarDay = ({ tasks, day, listTime }) => {
         </div>
     )
 }
-
-window.moment = moment;
 
 export default CalendarDay;

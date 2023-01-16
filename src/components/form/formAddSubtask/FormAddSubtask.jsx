@@ -3,11 +3,12 @@ import { useState } from "react";
 import Form from "../Form";
 
 
-const FormAddSubtask = ({ adding, nameSubtask, taskId, subtaskId, changeSubtaskName, setEditSubtask, deleteSubtaskPrevious, setAddingSubtask, addSubtask, changeSubtaskPrevious }) => {
+const FormAddSubtask = ({ adding, nameSubtask, taskId, subtaskId, changeSubtaskName,
+    setEditSubtask, deleteSubtaskPrevious, setAddingSubtask, addSubtask, changeSubtaskPrevious }) => {
     const [oldNameSubtask, setOldNameSubtask] = useState(nameSubtask)
     const handleBlur = (newNameSubtask) => {
 
-        if ((!oldNameSubtask || !oldNameSubtask.trim())  && adding) {
+        if ((!oldNameSubtask || !oldNameSubtask.trim()) && adding) {
             if (newNameSubtask && newNameSubtask.trim()) {
                 changeSubtaskPrevious(taskId, newNameSubtask);
                 addSubtask(taskId, newNameSubtask);

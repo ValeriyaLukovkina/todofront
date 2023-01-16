@@ -6,9 +6,10 @@ const ModalShowTasks = ({ filterTask, dateCell, setShowMore, coordCell }) => {
 
     const [marginLeft, setMarginLeft] = useState(0);
     const [marginTop, setMarginTop] = useState(0);
+    
     useEffect(() => {
-        const rigthLeft = (ref.current.clientWidth - coordCell.width)/2;
-        const topBottom = (ref.current.clientHeight - coordCell.height)/2;
+        const rigthLeft = (ref.current.clientWidth - coordCell.width) / 2;
+        const topBottom = (ref.current.clientHeight - coordCell.height) / 2;
         const clientWidth = document.documentElement.clientWidth;
         const clientHeight = document.documentElement.clientHeight;
         const left = coordCell.x - rigthLeft;
@@ -26,7 +27,7 @@ const ModalShowTasks = ({ filterTask, dateCell, setShowMore, coordCell }) => {
     }, [])
 
     return (
-        <div className={style.wrp} onClick={() => {setShowMore(false)}}>
+        <div className={style.wrp} onClick={() => { setShowMore(false) }}>
             <div ref={ref} className={style.modal} style={{ marginLeft: marginLeft + 'px', marginTop: marginTop + 'px' }}>
                 <button className={style.modal_btn_close} onClick={() => setShowMore(false)}>+</button>
                 <p className={style.modal_p}>{dateCell.format('ddd')}</p>

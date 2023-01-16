@@ -14,7 +14,8 @@ const Subtasks = ({ isTaskComplete, completeTask, subtask, isSubtaskComplete, ta
                         if (completeTask) {
                             isTaskComplete(taskId, false)
                         }
-                        isSubtaskComplete(taskId, el._id, false)}}
+                        isSubtaskComplete(taskId, el._id, false)
+                    }}
                     className={`${style.task_btn_complete} ${style.task_btn} ${style.subtask_btn}`}>
                     <span className={style.task_btn_span_nocomplete + ' ' + style.task_btn_span}></span>
                 </button>
@@ -26,8 +27,9 @@ const Subtasks = ({ isTaskComplete, completeTask, subtask, isSubtaskComplete, ta
             <div className={style.task_text}>
                 {el.complete && <div className={style.task_text_line_complete + ' ' + style.task_text_line}></div>}
                 {!el.complete && <div className={style.task_text_line_nocomplete + ' ' + style.task_text_line}></div>}
-                {!el.complete && (el._id === editSubtask || addingSubtask) ? 
-                <FormAddSubtaskContainer adding={addingSubtask} setAddingSubtask={setAddingSubtask} setEditSubtask={setEditSubtask} taskId={taskId} subtaskId={el._id} nameSubtask={el.nameSubtask}/>
+                {!el.complete && (el._id === editSubtask || addingSubtask) ?
+                    <FormAddSubtaskContainer adding={addingSubtask} setAddingSubtask={setAddingSubtask} setEditSubtask={setEditSubtask}
+                        taskId={taskId} subtaskId={el._id} nameSubtask={el.nameSubtask} />
 
                     : <p onClick={() => {
                         setEditSubtask(el._id)
@@ -52,7 +54,6 @@ const Subtasks = ({ isTaskComplete, completeTask, subtask, isSubtaskComplete, ta
                         setAddingSubtask(true)
                         addSubtaskPrevious(taskId, '')
                     }
-                    debugger
                 }}
                 className={style.subtask}>
                 <button

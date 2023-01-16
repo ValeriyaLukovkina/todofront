@@ -12,7 +12,7 @@ const SignInForm = ({ login }) => {
           <p className={style.sign_link_text}>Don't have an account?</p>
           <NavLink
             className={style.sign_link_nav}
-            to="/todofront/signup">
+            to="/signup">
             Sign up
           </NavLink>
         </div>
@@ -56,7 +56,11 @@ const SignInForm = ({ login }) => {
                   value={values.email}
                   className={style.sign_form_block_input + ' ' + (touched.email && errors.email && style.input_error)}
                 />
-                <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.email && style.sign_form_block_span_active)}>Email</span>
+                <span
+                  className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                    + (values.email && style.sign_form_block_span_active)}>
+                  Email
+                </span>
               </div>
               <div className={style.sign_form_block}>
                 <input
@@ -67,10 +71,13 @@ const SignInForm = ({ login }) => {
                   value={values.password}
                   className={style.sign_form_block_input + ' ' + (touched.password && errors.password && style.input_error)}
                 />
-                <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.password && style.sign_form_block_span_active)}>password</span>
+                <span
+                  className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                    + (values.password && style.sign_form_block_span_active)}>
+                  password
+                </span>
 
               </div>
-              {/* {errors.password && touched.password && errors.password} */}
               <div className={style.sign_form_block}>
                 <button className={style.sign_form_block_btn} type="submit" disabled={isSubmitting}>
                   Continue

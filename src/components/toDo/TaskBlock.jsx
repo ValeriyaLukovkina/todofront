@@ -7,6 +7,7 @@ const TaskBlock = ({ titleBlock, titleCategory, tasks, meanSort, props }) => {
     const [showTaskGroup, setShowTaskGroup] = useState(true);
     const [taskGroupList, setTaskGroupList] = useState(null);
     const [taskGroupDate, setTaskGroupDate] = useState(null);
+    
     useEffect(() => {
         setTaskGroupList(sortByList(tasks, titleCategory, 'category', Task, props));
         setTaskGroupDate(sortByDate(tasks, titleCategory, 'date', Task, props));

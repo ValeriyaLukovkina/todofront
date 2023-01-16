@@ -7,7 +7,6 @@ const CalendarMonth = ({ tasks, day }) => {
     const startDay = day.clone().startOf('month').startOf('week').subtract(1, 'day');
     const endDay = day.clone().endOf('month').endOf('week').subtract(1, 'day');
 
-
     const amountDay = endDay.diff(startDay, 'days') + 1;
     const calendar = [...Array(amountDay)].map(() => startDay.add(1, 'day').clone());
     const [countRows, setCountRows] = useState(0);

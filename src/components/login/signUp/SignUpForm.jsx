@@ -12,7 +12,7 @@ const SignUpForm = ({ registration }) => (
         <p className={style.sign_link_text}>Already have an account?</p>
         <NavLink
           className={style.sign_link_nav}
-          to='/todofront/signin'>
+          to='/signin'>
           Sign in
         </NavLink>
       </div>
@@ -62,7 +62,11 @@ const SignUpForm = ({ registration }) => (
                 value={values.firstName}
                 className={style.sign_form_block_input}
               />
-              <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.firstName && style.sign_form_block_span_active)}>First name</span>
+              <span
+                className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                  + (values.firstName && style.sign_form_block_span_active)}>
+                First name
+              </span>
             </div>
             <div className={style.sign_form_block}>
               <input
@@ -73,7 +77,11 @@ const SignUpForm = ({ registration }) => (
                 value={values.lastName}
                 className={style.sign_form_block_input}
               />
-              <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.lastName && style.sign_form_block_span_active)}>Last name</span>
+              <span
+                className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                  + (values.lastName && style.sign_form_block_span_active)}>
+                Last name
+              </span>
             </div>
             <div className={style.sign_form_block}>
               <input
@@ -84,7 +92,11 @@ const SignUpForm = ({ registration }) => (
                 value={values.email}
                 className={style.sign_form_block_input}
               />
-              <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.email && style.sign_form_block_span_active)}>Email</span>
+              <span
+                className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                  + (values.email && style.sign_form_block_span_active)}>
+                Email
+              </span>
             </div>
             <div className={style.sign_form_block}>
               <input
@@ -95,7 +107,11 @@ const SignUpForm = ({ registration }) => (
                 value={values.password}
                 className={style.sign_form_block_input}
               />
-              <span className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' ' + (values.password && style.sign_form_block_span_active)}>Password</span>
+              <span
+                className={style.sign_form_block_span + ' ' + style.sign_form_block_span_focus + ' '
+                  + (values.password && style.sign_form_block_span_active)}>
+                Password
+              </span>
             </div>
             <div className={style.sign_form_block}>
               <button className={style.sign_form_block_btn} type="submit" disabled={isSubmitting}>

@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import style from "./calendar.module.scss";
 import moment from "moment";
-import { useRef } from "react";
 import CalendarMonth from "./calendarView/CalendarMonth";
-import CalendarWeek from "./calendarView/CalendarWeek";
 import CalendarDay from "./calendarView/CalendarDay";
 import CalendarChoose from "./CalendarChoose";
 
@@ -20,12 +18,12 @@ const Calendar = ({ tasks, calendarViewArr, calendarView, changeCalendarView, li
         setDay(prev => prev.clone().subtract(1, 'month'))
     }
 
-    const nextWeek = () => {
-        setDay(prev => prev.clone().add(1, 'week'))
-    }
-    const previousWeek = () => {
-        setDay(prev => prev.clone().subtract(1, 'week'))
-    }
+    // const nextWeek = () => {
+    //     setDay(prev => prev.clone().add(1, 'week'))
+    // }
+    // const previousWeek = () => {
+    //     setDay(prev => prev.clone().subtract(1, 'week'))
+    // }
 
     const nextDay = () => {
         setDay(prev => prev.clone().add(1, 'day'))
@@ -72,14 +70,12 @@ const Calendar = ({ tasks, calendarViewArr, calendarView, changeCalendarView, li
                             <p className={style.header_block_date_p}>{day.format('YYYY')}</p>
                         </div>
                         {calendarView === 'Month' && <CalendarChoose previous={previousMonth} chooseToday={chooseToday} next={nextMonth} />}
-                        {/* {calendarView === 'Week' && <CalendarChoose previous={previousWeek} chooseToday={chooseToday} next={nextWeek} />} */}
                         {calendarView === 'Day' && <CalendarChoose previous={previousDay} chooseToday={chooseToday} next={nextDay} />}
                     </div>
                     <div></div>
                 </div>
             </div>
             {calendarView === 'Month' && <CalendarMonth tasks={tasks} day={day} />}
-            {/* {calendarView === 'Week' && <CalendarWeek tasks={tasks} day={day} />} */}
             {calendarView === 'Day' && <CalendarDay tasks={tasks} day={day} listTime={listTime} />}
 
         </div>

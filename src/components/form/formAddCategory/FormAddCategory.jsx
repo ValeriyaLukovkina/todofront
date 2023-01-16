@@ -37,8 +37,7 @@ const FormAddCategory = ({ onClose, addCategory, userId }) => {
                             if (e.key === 'Enter') {
                                 handleSubmit()
                             }
-                        }}
-                        >
+                        }}>
                         <input
                             placeholder={"Введите название"}
                             className={style.formCategory_input + ' ' + (touched.category && errors.category && style.formCategory_input_error)}

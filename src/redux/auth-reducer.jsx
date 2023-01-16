@@ -16,6 +16,7 @@ let initialState = {
 const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_TASKS:
+            debugger
             return {
                 ...state,
                 ...action.data,
@@ -34,8 +35,9 @@ export let setAuthUserData = (userId, firstName, lastName, token, isAuth, initia
 }
 
 export const login = (email, password, setStatus ) => async (dispatch) => {
+    debugger
     let promise = await authAPI.login(email, password);
-
+debugger
     if (promise.resultCode === 0) {
         const {token, userId, userFirstName, userLastName, categories } = promise;
         dispatch(setAuthUserData(userId, userFirstName,userLastName, token, true, true))

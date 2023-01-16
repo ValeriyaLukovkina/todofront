@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { changeMeanSort } from "../../../redux/sort-reducer";
 import { addSubtaskPrevious, deleteSubtask, deleteTask, isAllSubtaskComplete, isSubtaskComplete, isTaskComplete } from "../../../redux/todo-reducer";

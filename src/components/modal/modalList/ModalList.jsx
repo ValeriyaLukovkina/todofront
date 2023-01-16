@@ -8,7 +8,9 @@ import ButtonClose from "../../buttons/buttonClose/ButtonClose";
 const modalList = ({ tasks, isOpen, onClose, categories, taskId, changeTaskCategory, taskCategory, setTemporaryTaskCategory }) => {
     const categoriesItem = categories.map(el => {
 
-        return <ModalListItem onClose={onClose} tasks={tasks} taskId={taskId} taskCategory={taskCategory} setTemporaryTaskCategory={setTemporaryTaskCategory} titleCategory={el.title}  changeTaskCategory={changeTaskCategory} />
+        return <ModalListItem onClose={onClose} tasks={tasks} taskId={taskId}
+            taskCategory={taskCategory} setTemporaryTaskCategory={setTemporaryTaskCategory} titleCategory={el.title}
+            changeTaskCategory={changeTaskCategory} />
     })
     if (!isOpen) {
         return null
