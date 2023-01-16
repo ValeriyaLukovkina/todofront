@@ -84,8 +84,9 @@ const Navbar = ({ categories, logout, deleteCategory, userId, firstName }) => {
             <div className={style.categories} style={{ maxHeight: height + 'px' }}>
                 {showCategory && categoryItem}
             </div>
-            <button className={style.logout} onClick={logout}>
+            <button className={style.logout}>
                 <NavLink
+                    onClick={logout}
                     className={style.logout_link}
                     to="/signin">
                     log out
