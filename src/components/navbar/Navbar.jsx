@@ -12,7 +12,7 @@ import logoDelete from '../../assests/svg/Delete.svg'
 import { useEffect } from "react";
 import ModalDeleteCategoryContainer from "../modal/modalDeleteCategory/ModalDeleteCategoryContainer";
 
-const Navbar = ({ categories, logout, deleteCategory, userId, firstName }) => {
+const Navbar = ({ categories, logout, userId, firstName }) => {
 
     const ref = useRef();
     const [height, setHeight] = useState(0);

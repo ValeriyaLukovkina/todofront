@@ -33,11 +33,11 @@ const App = ({ isAuth, setAuthUserData, initializedSuccess, getAllTasks, setCate
               <Route path='/' element={!isAuth && <SignIn />} />
               <Route path='/signin' element={isAuth ? <Navigate replace to={'/'} /> : <SignIn />} />
               <Route path='/signup' element={isAuth ? <Navigate replace to={'/'} /> : <SignUp />} />
-              <Route path='/tasks' element={<ToDoContainer />} />
-              <Route path='/week' element={<ToDoWeekContainer />} />
-              <Route path='/day' element={<ToDoDayContainer />} />
-              <Route path='/category/:name' element={<ToDoCategoryContainer />} />
-              <Route path='/calendar' element={<CalendarContainer />} />
+              <Route path='/tasks' element={!isAuth ? <Navigate replace to={'/'} /> : <ToDoContainer />} />
+              <Route path='/week' element={!isAuth ? <Navigate replace to={'/'} /> : <ToDoWeekContainer />} />
+              <Route path='/day' element={!isAuth ? <Navigate replace to={'/'} /> : <ToDoDayContainer />} />
+              <Route path='/category/:name' element={!isAuth ? <Navigate replace to={'/'} /> : <ToDoCategoryContainer />} />
+              <Route path='/calendar' element={!isAuth ? <Navigate replace to={'/'} /> : <CalendarContainer />} />
             </Routes>
           </div>
         </BrowserRouter>
