@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://89.223.69.246:3001/api/'
+    baseURL: 'https://89.223.69.246:3001/api/'
 })
 
 export const authAPI = {
