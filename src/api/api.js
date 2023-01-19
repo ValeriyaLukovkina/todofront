@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://24todo.ru:3001/api/'
+    baseURL: 'http://24todo.ru:3001/api/'
 })
 
 export const authAPI = {
